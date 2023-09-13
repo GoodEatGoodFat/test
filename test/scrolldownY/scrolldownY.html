@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        /* CSS Styling */
+        .scroll-triggered-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            height: 2000px;
+            width: 500px;
+            background-color: yellow;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .scroll-triggered-content {
+                /* Adjust styles for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-triggered-content">
+        <h1>Your Content Here</h1>
+    </div>
+    <div class="other-content">
+        <p>Other page content...</p>
+    </div>
+    <script>
+        // JavaScript
+        const scrollTriggeredContent = document.querySelector('.scroll-triggered-content');
+
+        function checkScroll() {
+            const scrollY = window.scrollY;
+            const triggerPosition = scrollTriggeredContent.getBoundingClientRect().top + scrollY;
+            const windowHeight = window.innerHeight;
+
+            if (scrollY + windowHeight > triggerPosition) {
+                scrollTriggeredContent.style.opacity = 1;
+                scrollTriggeredContent.style.transform = 'translateY(0)';
+            }
+        }
+
+        // Attach the scroll event listener to the window
+        window.addEventListener('scroll', checkScroll);
+
+        // Check the initial scroll position
+        checkScroll();
+    </script>
+</body>
+</html>

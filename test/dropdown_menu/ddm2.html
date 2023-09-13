@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="myDiv" style="background-color: lightblue; padding-top: 20px;">这是一个示例元素</div>
+    <a href="#" id="myLink">点击我修改上内边距</a>
+
+    <script>
+        const myDiv = document.getElementById("myDiv");
+        const myLink = document.getElementById("myLink");
+
+        myLink.addEventListener("click", function (event) {
+            event.preventDefault(); // 阻止默认的链接行为
+            myDiv.style.paddingTop = "40px"; // 修改上内边距为 40px
+        });
+    </script>
+</body>
+</html>

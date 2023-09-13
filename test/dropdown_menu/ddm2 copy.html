@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out; /* 添加渐变动画效果 */
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">+</button>
+    <div class="dropdown-content">
+        <p>下拉菜单的内容在这里</p>
+        <p>更多内容</p>
+        <p>更多内容</p>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        let isOpen = false;
+
+        toggleButton.addEventListener("click", () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                dropdownContent.style.maxHeight = "99900px"; // 设置展开后的高度
+            } else {
+                dropdownContent.style.maxHeight = "0"; // 设置关闭后的高度
+            }
+        });
+    </script>
+</body>
+</html>

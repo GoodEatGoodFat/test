@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-body {
+  position: relative;
+}
+
+.main-body__static-bkg1,
+.main-body__static-bkg2,
+.main-body__static-bkg3,
+.main-body__static-wht {
+  position: absolute;
+  filter: blur(5px);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: 1s ease;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-body__static-bkg1 {
+  opacity: 100;
+  background-image: url(https://github.com/GoodEatGoodFat/Fullstack-practice/blob/heng-structure/assignment%201/imgs/recipes/1.png?raw=true);
+}
+
+.main-body__static-bkg2 {
+  opacity: 0;
+  background-image: url(https://github.com/GoodEatGoodFat/Fullstack-practice/blob/heng-structure/assignment%201/imgs/recipes/2.png?raw=true);
+}
+
+.main-body__static-bkg3 {
+  opacity: 0;
+  background-image: url(https://github.com/GoodEatGoodFat/Fullstack-practice/blob/heng-structure/assignment%201/imgs/recipes/3.png?raw=true);
+}
+
+.main-body__static-wht {
+  background-color: white;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  height: 400px;
+  background-color: bisque;
+  margin: auto;
+}
+
+.box {
+  /* position: absolute;
+  background-color: red;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 300; */
+}
